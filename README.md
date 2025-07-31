@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 # dotsies
-doties font integration for firefox
-=======
+
+
+========
 # Dotsies for Firefox
 
 This tool aims to provide in-broswer translation from standard fonts into dotsies font, via firefox add-on. 
