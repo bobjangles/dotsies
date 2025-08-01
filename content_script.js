@@ -8,7 +8,11 @@ style.textContent = `
     font-weight: normal;
     font-style: normal;
   }
-  body, body *:not([class*="icon"]):not([class*="emoji"]) {
+  * {
+    font-family: 'Dotsies' !important;
+  }
+  *::first-letter,
+  *::first-line {
     font-family: 'Dotsies' !important;
   }
 `;
