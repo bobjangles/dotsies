@@ -1,21 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Dotsies Font Toggle",
+  "name": "Dotsies Font Everywhere",
   "version": "1.0",
-  "description": "Toggle Dotsies font for main text content on any website.",
-  "permissions": ["storage", "scripting"],
-  "host_permissions": ["<all_urls>"],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "action": {
-    "default_icon": "icons/dotsies_text_icon_large.png"
-  },
+  "description": "Replaces fonts on all websites with Dotsies when enabled.",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
+      "js": ["content_script.js"],
+      "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
