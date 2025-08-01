@@ -9,7 +9,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_icon": "icons/icon16.png"
+    "default_icon": "icons/dotsies_text_icon_large.png"
   },
   "content_scripts": [
     {
