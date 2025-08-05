@@ -7,13 +7,21 @@
     {
       "matches": ["<all_urls>"],
       "js": ["content_script.js"],
+      "css": ["dotsies-font.css"],
       "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["fonts/dotsies.otf"],
+      "resources": [
+        "fonts/dotsies.otf"
+      ],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dotsies-font-everywhere@localhost"
+    }
+  }
 }

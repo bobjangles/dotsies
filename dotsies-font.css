@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Dotsies';
+  src: url('fonts/dotsies.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply font to all text elements */
+body, html, * {
+  font-family: 'Dotsies', monospace, sans-serif !important;
+}
