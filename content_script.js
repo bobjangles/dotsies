@@ -11,43 +11,21 @@ function injectDotsiesStyle() {
       font-weight: normal;
       font-style: normal;
     }
-    body, body *:not([class*="icon"]):not([class*="emoji"]) {
-      font-family: 'Dotsies' !important;
+    html, body, body *:not([class*="icon"]):not([class*="emoji"]) {
+      font-family: 'Dotsies', sans-serif !important;
+      /* Mobile font-size adjustment */
+      font-size: min(max(1em, 16px), 4vw) !important;
+      line-height: 1.3 !important;
+      letter-spacing: 0.05em !important;
+    }
+    @media (max-width: 600px) {
+      html, body, body *:not([class*="icon"]):not([class*="emoji"]) {
+        font-size: max(18px, 4vw) !important;
+      }
     }
   `;
   document.head.appendChild(style);
 }
 
-function removeDotsiesStyle() {
-  const style = document.getElementById('dotsies-font-style');
-  if (style) style.remove();
-}
-
-// Respond to popup toggle messages
-if (typeof browser !== "undefined" && browser.runtime && browser.runtime.onMessage) {
-  browser.runtime.onMessage.addListener((message) => {
-    if (typeof message.dotsiesEnabled === 'boolean') {
-      if (message.dotsiesEnabled) injectDotsiesStyle();
-      else removeDotsiesStyle();
-    }
-  });
-
-  // On load, apply if enabled
-  browser.storage.local.get('dotsiesEnabled').then((result) => {
-    if (result.dotsiesEnabled) injectDotsiesStyle();
-    else removeDotsiesStyle();
-  });
-} else {
-  // fallback for Chrome
-  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (typeof message.dotsiesEnabled === 'boolean') {
-      if (message.dotsiesEnabled) injectDotsiesStyle();
-      else removeDotsiesStyle();
-    }
-  });
-
-  chrome.storage.local.get('dotsiesEnabled', (result) => {
-    if (result && result.dotsiesEnabled) injectDotsiesStyle();
-    else removeDotsiesStyle();
-  });
-}
+// Always inject on load
+injectDotsiesStyle();

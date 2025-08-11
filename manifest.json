@@ -1,13 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Dotsies Font Everywhere",
-  "version": "1.1",
-  "description": "Replaces fonts on all websites with Dotsies when enabled.",
-  "action": {
-      "default_icon": "/icons/dotsies_the_120x120.png",
-      "default_title": "Dotsies Font",
-      "default_popup": "popup.html"
-  },
+  "version": "2.0",
+  "description": "Replaces fonts on all websites with Dotsies, always on.",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
